@@ -1,0 +1,1 @@
+This file contain exercises about Shell variables expansion
