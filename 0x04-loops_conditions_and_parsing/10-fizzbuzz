@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#"FizzBuzz exercise."
+# FizzBuzz exercise.
 
 i="0"
 
-for i in {1..99}
+for i in {1..100}
 do
     if [ $((i % 3)) -eq 0 ]
     then
@@ -21,4 +21,3 @@ do
         echo "$i"
     fi
 done
-echo "Buzz"
