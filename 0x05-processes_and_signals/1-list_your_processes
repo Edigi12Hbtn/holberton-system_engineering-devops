@@ -2,4 +2,4 @@
 # list current processes. a for all,
 # u for processes on a terminal, 
 # x for processes without controlling ttys.
-ps -auxH
+ps aux
