@@ -1,4 +1,4 @@
-#create a new file with permissions, owner, group, content.
+# create a new file with permissions, owner, group, content.
 
 file { '/tmp/holberton':
       ensure  => present,
