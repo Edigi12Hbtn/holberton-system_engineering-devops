@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# install nginx and set the server to display Holberton School
+sudo apt -y install nginx
+echo 'Holberton School'  > /var/www/html/index.nginx-debian.html
