@@ -8,4 +8,5 @@ apt-get install haproxy=2.0.\*
 
 echo -e '\nfrontend http_frontend\n    bind *:80\n    mode http\n    default_backend http_backend\n' >> /etc/haproxy/haproxy.cfg
 echo -e 'backend http_backend\n    balance roundrobin\n    server node1 35.196.1.33:80 check\n    server node2 35.243.140.125:80 check\n' >> /etc/haproxy/haproxy.cfg
+echo "ENABLED=1" >> /etc/default/haproxy
 service haproxy restart
