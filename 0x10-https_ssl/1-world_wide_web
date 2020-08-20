@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# prints information about domain and subdomains.
+
+dig_subdomain () {
+# $1 is subdomain
+# $2 is domain name
+
+    sub=$1
+    domain=$2
+
+    echo -n "The subdomain $sub is a "
+    dig "$sub.$domain" | grep -A1 'ANSWER SECTION' | tail -1 | awk '{ print $4 " record and points to " $5 }'
+
+    return 0
+}
+
+
+if [ "$#" -eq 1 ]; then
+    dig_subdomain "www" "$1"
+    dig_subdomain "lb-01" "$1"
+    dig_subdomain "web-01" "$1"
+    dig_subdomain "web-02" "$1"
+elif [ "$#" -eq 2 ]; then
+    dig_subdomain "$2" "$1"
+fi
+
