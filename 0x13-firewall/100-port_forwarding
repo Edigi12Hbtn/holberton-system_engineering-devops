@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+pattern="# Don't delete these required lines, otherwise there will be errors"
+replace="*nat\n:PREROUTING ACCEPT [0:0]\n-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80\nCOMMIT\n\n$pattern"
+sudo apt-get update
+sudo apt-get install ufw
+sudo service ufw start
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+sed -i "s|$pattern|$replace|" /etc/ufw/before.rules
+sudo ufw default deny incoming
+sudo service ufw restart
+sudo ufw enable
