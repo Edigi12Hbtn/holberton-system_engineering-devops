@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# comment.
 chown nginx:nginx /etc/nginx/nginx.conf
 pattern1="listen 80 default_server;"
 pattern2="listen [::]:80 default_server ipv6only=on;"
