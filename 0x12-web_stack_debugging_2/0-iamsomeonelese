@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # change user
-chsh -s /bin/bash "$1"
-sudo "$1"
+sudo chsh -s /bin/bash "$1"
+sudo su "$1"
 whoami
