@@ -8,4 +8,4 @@ repl2="listen [::]:8080 default_server ipv6only=on;"
 chmod 700 /etc/nginx/nginx.conf
 sed -i "s/$pattern1/$repl1/" /etc/nginx/sites-available/default
 sed -i "s/$pattern2/$repl2/" /etc/nginx/sites-available/default
-sudo service nginx restart
+sudo -u 'nginx' 'service nginx restart'
