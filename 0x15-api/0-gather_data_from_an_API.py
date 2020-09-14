@@ -10,7 +10,8 @@ if __name__ == '__main__':
     usr_info = r.json()
     emp_name = usr_info.get('name')
 
-    route = "https://jsonplaceholder.typicode.com/users/{}/todos".format(emp_id)
+    url = "https://jsonplaceholder.typicode.com/users/{}/todos"
+    route = url.format(emp_id)
     r = requests.get(route)
     tasks = r.json()
 
