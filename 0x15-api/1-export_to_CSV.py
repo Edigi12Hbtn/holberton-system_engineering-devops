@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""prints information about employee and his/her tasks using employee id."""
+"""export user tasks data to CSV format."""
 import requests
 from sys import argv
 
